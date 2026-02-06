@@ -21,8 +21,8 @@ dist/
 .DS_Store
 *.pem
 
-# Package manager lock files (keep pnpm-lock.yaml, ignore others)
-package-lock.json
+# Package manager lock files (keep package-lock.json, ignore others)
+pnpm-lock.yaml
 yarn.lock
 
 # Debug

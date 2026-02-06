@@ -38,23 +38,23 @@ A Next.js application for customer success teams to monitor and manage customer 
 ### Prerequisites
 
 - Node.js 18+
-- pnpm 8+ (recommended) or npm/yarn
+- npm (comes with Node.js)
 
 ### Installation
 
 ```bash
-# Install pnpm (if not already installed)
-npm install -g pnpm
 
-# Install dependencies
-pnpm install
+
+
+
+npm install
 ```
 
 ### Development
 
 ```bash
 # Start development server
-pnpm dev
+npm run dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) to view the application.
@@ -66,20 +66,20 @@ Open [http://localhost:3000](http://localhost:3000) to view the application.
 
 ```bash
 # Run unit tests
-pnpm test
+npm test
 
 # Run E2E tests
-pnpm test:e2e
+npm test:e2e
 
 # Run tests in watch mode
-pnpm test -- --watch
+npm test -- --watch
 ```
 
 ### Building for Production
 
 ```bash
-pnpm build
-pnpm start
+npm run build
+npm start
 ```
 
 ## Project Structure

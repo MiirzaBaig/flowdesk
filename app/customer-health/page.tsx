@@ -33,37 +33,42 @@ export default async function CustomerHealthPage({
 
   return (
     <div className="space-y-4">
-      {/* Filters bar - client component for interactivity */}
-      <CustomerFiltersBar
-        initialSearch={listParams.search || ''}
-        initialSegment={listParams.segment || 'all'}
-      />
-
-      {/* Customer table with server-side data fetching */}
+      {/* Single async child so useSearchParams in FiltersBar/Table run inside this boundary */}
       <Suspense
         key={JSON.stringify(listParams)}
-        fallback={<CustomerTableSkeleton />}
+        fallback={
+          <>
+            <div className="h-12 animate-pulse rounded-md bg-muted/50" />
+            <CustomerTableSkeleton />
+          </>
+        }
       >
-        <CustomerTableContent params={listParams} />
+        <CustomerHealthContent params={listParams} />
       </Suspense>
     </div>
   );
 }
 
-// Separate async component for data fetching
-async function CustomerTableContent({ params }: { params: CustomerListParams }) {
+// Single async child of Suspense: fetches data then renders client components that use useSearchParams
+async function CustomerHealthContent({ params }: { params: CustomerListParams }) {
   const response = await fetchCustomers(params);
 
   return (
-    <CustomerTable
-      customers={response.data}
-      totalCount={response.totalCount}
-      page={response.page}
-      pageSize={response.pageSize}
-      totalPages={response.totalPages}
-      currentSort={params.sort}
-      currentDir={params.dir}
-    />
+    <>
+      <CustomerFiltersBar
+        initialSearch={params.search || ''}
+        initialSegment={params.segment || 'all'}
+      />
+      <CustomerTable
+        customers={response.data}
+        totalCount={response.totalCount}
+        page={response.page}
+        pageSize={response.pageSize}
+        totalPages={response.totalPages}
+        currentSort={params.sort}
+        currentDir={params.dir}
+      />
+    </>
   );
 }
 
