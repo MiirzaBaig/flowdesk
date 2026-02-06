@@ -2,13 +2,11 @@
 
 ## A. High-Level Estimation
 
-**Overall Estimate**: **1.5-3 days** of focused development work for an experienced React/Next.js engineer, assuming designs are available.
-
 **Breakdown**:
-- **Routing, layout, basic page shell**: 0.25-0.5 day
-- **Table with sorting, server-side pagination, filters, search**: 0.75-1 day
-- **Customer details panel (right-side) with health data**: 0.5-0.75 day
-- **Loading/error/empty states, polish, accessibility, tests**: 0.5-0.75 day
+- **Routing, layout, basic page shell**
+- **Table with sorting, server-side pagination, filters, search**
+- **Customer details panel (right-side) with health data**
+- **Loading/error/empty states, polish, accessibility, tests**
 
 ## B. Architecture & Component Structure
 
