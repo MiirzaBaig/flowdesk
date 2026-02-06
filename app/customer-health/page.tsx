@@ -5,6 +5,9 @@ import { CustomerTable } from '@/components/customer-health/CustomerTable';
 import { CustomerTableSkeleton } from '@/components/customer-health/CustomerTableSkeleton';
 import { fetchCustomers } from '@/lib/api/customers';
 
+// Force dynamic rendering since we use searchParams
+export const dynamic = 'force-dynamic';
+
 interface CustomerHealthPageProps {
   searchParams: Promise<{
     search?: string;

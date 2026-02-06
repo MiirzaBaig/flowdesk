@@ -5,6 +5,9 @@ import { CustomerDetailsPanel } from '@/components/customer-health/CustomerDetai
 import { CustomerDetailsSkeleton } from '@/components/customer-health/CustomerDetailsSkeleton';
 import { fetchCustomerHealth } from '@/lib/api/customers';
 
+// Force dynamic rendering since we use dynamic route params
+export const dynamic = 'force-dynamic';
+
 interface CustomerDetailsPageProps {
   params: Promise<{ customerId: string }>;
 }
