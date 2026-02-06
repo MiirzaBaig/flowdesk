@@ -35,7 +35,7 @@ export default async function CustomerHealthPage({
     <div className="space-y-4">
       {/* Filters bar - client component for interactivity */}
       <CustomerFiltersBar
-        initialSearch={listParams.search}
+        initialSearch={listParams.search || ''}
         initialSegment={listParams.segment || 'all'}
       />
 
