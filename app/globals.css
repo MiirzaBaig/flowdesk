@@ -1,0 +1,85 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-geist-sans: 'Geist', system-ui, sans-serif;
+  --font-geist-mono: 'Geist Mono', monospace;
+}
+
+@layer base {
+  html {
+    @apply antialiased;
+  }
+
+  body {
+    @apply bg-white text-black;
+  }
+}
+
+@layer components {
+  /* Skeleton loading animation - kept simple */
+  .skeleton {
+    @apply bg-slate-100 animate-shimmer;
+  }
+
+  /* Table styles - High Contrast */
+  .table-header-cell {
+    @apply px-4 py-3 text-left text-xs font-bold uppercase tracking-wider text-black bg-slate-50 border-b-2 border-black;
+  }
+
+  .table-cell {
+    @apply px-4 py-4 text-sm text-black border-b border-black;
+  }
+
+  .table-row {
+    @apply bg-white hover:bg-brand-50 transition-colors cursor-pointer;
+  }
+
+  .table-row-selected {
+    @apply bg-brand-100;
+  }
+
+  /* Button variants - Neo-Brutalism */
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 px-4 py-2 text-sm font-bold border-2 border-black transition-all duration-75 focus:outline-none focus:ring-0 active:translate-x-[2px] active:translate-y-[2px] active:shadow-none;
+  }
+
+  .btn-primary {
+    @apply bg-brand-500 text-white shadow-brutal hover:-translate-y-[2px] hover:-translate-x-[2px] hover:shadow-brutal-lg;
+  }
+
+  .btn-secondary {
+    @apply bg-white text-black shadow-brutal hover:-translate-y-[1px] hover:-translate-x-[1px] hover:shadow-brutal-lg;
+  }
+
+  .btn-ghost {
+    @apply bg-transparent text-black border-transparent hover:bg-slate-100 active:translate-x-0 active:translate-y-0 shadow-none;
+  }
+
+  /* Input styles - Sharp */
+  .input {
+    @apply w-full px-3 py-2 text-sm border-2 border-black bg-white placeholder-slate-500 focus:outline-none focus:ring-4 focus:ring-brand-500/20 focus:border-black transition-shadow shadow-brutal-sm;
+  }
+
+  /* Badge styles - Solid */
+  .badge {
+    @apply inline-flex items-center px-2.5 py-0.5 text-xs font-bold border border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)];
+  }
+
+  /* Panel styles */
+  .panel {
+    @apply bg-white border-2 border-black shadow-brutal;
+  }
+
+  /* Card styles */
+  .card {
+    @apply bg-white border-2 border-black p-4 shadow-brutal;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
